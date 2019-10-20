@@ -15,7 +15,9 @@ Naive approach would use double for loop, but this isn't acceptable. We have to 
 Python dictionary (hashtable)
 
 ## Time complexity
+Linear time
 O(n)
 
 ## Space complexity
+Linear space
 S(n)

@@ -17,4 +17,5 @@ Linear time (iterate over each element from input list)
 O(n)
 
 ## Space complexity:
+Constant space
 S(1)

@@ -20,4 +20,5 @@ Linear time
 O(n)
 
 ## Space complexity
+Linear space
 S(n) (we have to store all characters in a dictionary)

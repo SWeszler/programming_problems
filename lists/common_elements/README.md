@@ -22,4 +22,5 @@ Linear time
 O(n)
 
 ## Space complexity:
+Constant space
 S(1)
