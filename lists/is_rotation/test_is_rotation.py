@@ -34,3 +34,8 @@ class IsRotationTest(TestCase):
         list2 = [7, 1, 2, 3, 4, 5, 6]
         self.assertEqual(is_rotation(self.list1, list2), True)
 
+    def test_is_rotation8(self):
+        list2 = [4, 5, 6, 7, 0, 2, 3]
+        for i in range(10000000):
+            list2.append(i)
+        self.assertEqual(is_rotation(self.list1, list2), False)
