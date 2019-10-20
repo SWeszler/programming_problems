@@ -22,14 +22,13 @@ The better solution that doesn't come up to mind right away is to iterate over e
 Traversing graph requires double for loop, which gives us quadratic time. Having to check only cells around the bomb makes our algorithm much faster than checking each cell of the field. 
 
 ## Data structure
-Graph, a list of lists
+Graph (a 2D list)
 
 ## Time complexity
-Quadratic time
-O(n^2)
+Linear time
+O(n)
+'n' represents number of bombs, so it doesn't matter that we have double for loop. It would matter if we check every single cell like it's been implemented in naive approach.
 
 ## Space complexity
-Quadratic space
-S(n^2)
-
-NOTE: power operator in Python is '**', not '^'
+Linear space
+S(n)
