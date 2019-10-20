@@ -13,6 +13,8 @@ by Sebastian Weszler
 
 ## Graphs (two-dimensional lists)
 1. Assign numbers in Minesweeper
+2. Find where to expand in Minesweeper
+3. Rotate 2D list by 90 degrees
 
 ## Linked Lists
 

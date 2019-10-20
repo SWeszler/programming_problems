@@ -26,4 +26,4 @@ O(n)
 
 ## Space complexity
 Constant space
-S(1)
+O(1)

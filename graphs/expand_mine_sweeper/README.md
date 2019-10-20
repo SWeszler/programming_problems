@@ -20,4 +20,4 @@ O(n)
 
 ## Space complexity
 Linear space
-S(n)
+O(n)
