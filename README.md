@@ -1,4 +1,4 @@
-# Programming Problems
+# Programming Problems Collection
 by Sebastian Weszler
 
 ## Lists
@@ -8,10 +8,11 @@ by Sebastian Weszler
 
 
 ## Strings
-
+1. Non-repeating character.
+2. One ways string.
 
 ## Graphs (two-dimensional lists)
-
+1. Assign numbers in Minesweeper
 
 ## Linked Lists
 
