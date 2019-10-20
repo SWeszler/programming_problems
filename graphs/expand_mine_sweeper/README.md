@@ -19,5 +19,5 @@ Considering 'n' as number of cells with value 0 time complexity is linear.
 O(n)
 
 ## Space complexity
-Linear space
-O(n)
+Constant space 
+O(1) - in the worst case scenario the queue will have 8 surrounding elements, it's because each examined cell is removed from the queue and its value is replaced with -2
