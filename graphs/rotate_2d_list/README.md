@@ -23,6 +23,7 @@ After that, we use a double for loop to assign each element from given list to t
 new_i = j (swapping i with j)
 new_j = n - 1 - i (going backwards)
 
+In-place solution uses four sub-list (quarters), created by dividing both sides of squared 2D list by two (odd number division results are rounded using function ceil and floor). By iterating over each cell in first quarter and storing each corresponding element from another quarters we can smoothly rotate them.
 
 ## Data structure
 Two-dimensional Python list
@@ -32,3 +33,5 @@ O(n^2) - considering 'n' as one of the sides of squared 2D list
 
 ## Space complexity
 O(n^2) - considering 'n' as one of the sides of squared 2D list
+
+In-space solution requires only 1 list with 4 elements, so its space complexity is constant O(1)
