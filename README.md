@@ -21,7 +21,7 @@ by Sebastian Weszler
 
 
 ## Trees
-1. Is is a binary search tree
+1. Is it a binary search tree
 2. Lowest common ancestor of two items in binary tree
 
 
