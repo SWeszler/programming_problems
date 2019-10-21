@@ -33,6 +33,10 @@ head3 =  3
      / \   / \  
     0   2 4   6  
 
+Traversing method used here is called Preorder traversal (Root, Left, Right), it's one of Depth First Traversal methods.
+To return result for left and right subtrees we have to use 'and' or '&' operator.
+
+
 ## Data structure
 Binary tree
 
@@ -42,4 +46,4 @@ O(n) - in worst case scenario we have to traverse all nodes
 
 ## Space complexity
 Constant space  
-O(1) - we don't need to deep copy given tree, those objects already exist in memory, however a function create_tree used for tests has linear space complexity O(n). 
+O(1) - we don't need to deep copy given tree, those objects already exist in memory, however a function create_tree used for tests has linear space complexity O(n).
