@@ -28,7 +28,9 @@ def nth_from_last(head, n):
 
 
 def nth_from_last_naive(head, n):
-    """Returns n-th element from linked list, counting from the end"""
+    """ NAIVE approach, not recommended.
+    It uses much more memory to store each element with its index.
+    Returns n-th element from linked list, counting from the end"""
 
     if not head:
         return None
