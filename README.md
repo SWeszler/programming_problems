@@ -6,20 +6,20 @@ by Sebastian Weszler
 2. Common elements in two sorted lists.
 3. Is list a rotation of another list.
 
-
 ## Strings
 1. Non-repeating character.
 2. One way string.
 3. Compare strings by which one is strictly smaller
+4. Matching Parentheses
 
 ## Graphs (two-dimensional lists)
 1. Assign numbers in Minesweeper
 2. Find where to expand in Minesweeper
 3. Rotate 2D list by 90 degrees
+4. K Closest Points to origin
 
 ## Linked Lists
 1. N-th element of a linked list
-
 
 ## Trees
 1. Is it a binary search tree
