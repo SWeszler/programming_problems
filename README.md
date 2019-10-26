@@ -9,7 +9,8 @@ by Sebastian Weszler
 
 ## Strings
 1. Non-repeating character.
-2. One ways string.
+2. One way string.
+3. Compare strings by which one is strictly smaller
 
 ## Graphs (two-dimensional lists)
 1. Assign numbers in Minesweeper
