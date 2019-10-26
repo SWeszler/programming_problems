@@ -40,8 +40,8 @@ Python List
 
 ## Time complexity
 Linearithmic time  
-O(N*logN) - it's because Python sort method time complexity is O(N *logN)
-
+O(N*logN) - it's because Python sort method time complexity is O(N *logN).  
+It's a Timsort, combination of insertion sort and merge sort.
 
 ## Space complexity
 Constant space

@@ -27,9 +27,15 @@ by Sebastian Weszler
 
 ## Techniques
 1. Analyse solution on paper.
-2. Big picture first, then details. If this is large problem break down into smaller functions, separate algorithm from data structure. Use known data structure.
-3. Communicate your thoughts, speak about it. Make sure all your assumptions are correct.
-
+2. Big picture first, then details. If this is large problem break down into smaller functions (representing steps or different cases), separate algorithm from data structure. Use known data structure.
+3. B.U.D.  
+Bottleneck - Identify a bottleneck and get rid of it. An example problem could be two lists that we must iterate to find a common items.
+Instead of iterating both lists we can store one of them in a data structure that allows us quick (constant) look-up.  
+Unnecessary work - Try a brute force solution and look for unnecessary work that can be eliminated.   
+Duplicated work - The same as for unnecessary work, try to eliminate operations that are duplicated in your brute force solution.
+4. Space/Time tradeoff. Most of the time when you want to improve your algorithm and make it working faster it must use more space, which means you must store more data in memory. This should lead you to choosing proper data structure that eventually helps you solve this problem optimally.
+5. D.I.Y (do it yourself) Use big example and try to solve it manually, you might be able to reverse engineer your thought process (your brain algorithm)
+6. Communicate your thoughts, speak about it. Make sure all your assumptions are correct.
 
 ## Testing
 
