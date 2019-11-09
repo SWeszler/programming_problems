@@ -1,18 +1,19 @@
 def count_and_say(n):
-    result = '1'
+    elem = '1'
 
-    for _ in range(n - 1):
-        temp = ''
+    for i in range(1, n):
+        prev = elem[0]
         count = 0
-        prev = result[0]
-        for i in range(len(result)):
-            if result[i] != prev:
-                temp += str(count) + prev
-                prev = result[i]
-                count = 1
-            else:
+        new_elem = ''
+        for j in range(len(elem)):
+            if elem[j] == prev:
                 count += 1
-        temp += str(count) + result[i]
-        result = temp
+            else:
+                new_elem += str(count) + prev
+                count = 1
+            prev = elem[j]
 
-    return result
+        new_elem += str(count) + prev
+        elem = new_elem
+
+    return elem
