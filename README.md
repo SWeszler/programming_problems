@@ -11,6 +11,7 @@ by Sebastian Weszler
 2. One way string.
 3. Compare strings by which one is strictly smaller
 4. Matching Parentheses
+5. Count and Say
 
 ## Graphs (two-dimensional lists)
 1. Assign numbers in Minesweeper
