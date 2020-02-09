@@ -30,10 +30,10 @@ Constraints:
 First and foremost we try to break this down.
 We have to test multiple values to find the best one.
 To solve this problem with optimal time complexity we're going to use binary search algorithm.
-1. Create a function that will replace and sum all items in given list
+1. Create a helper function that will replace and sum all items in given list
 2. Assign left and right values for binary search, minimum and maximum possible. Note that those values are not necessarily in given list.
 3. Using binary search find two closest values
-4. Choose from two values which one is closer to given target
+4. Choose from two values which one is closer to given target if they are the same return smaller.
 
 For binary search, it explains how to find middle value:
 mid = l + (r - l)/2
@@ -43,9 +43,10 @@ mid = l/2 + r/2
 mid = (l + r)/2
 
 ## Data structure
-
+Python List
 
 ## Time complexity
-
+O(n*logn)
 
 ## Space complexity
+O(n)

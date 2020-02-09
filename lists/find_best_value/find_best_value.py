@@ -20,7 +20,8 @@ def binary_search(arr, target):
 
 
 def find_best_value(arr, target):
-    """Sort a list for ease of summation."""
+    """Returns the value that after replacing all larger elements in array sum of it would be the closest to given target.
+    Sort a list for ease of summation."""
     
     arr.sort()
     arr_len = len(arr)

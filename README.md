@@ -6,6 +6,7 @@ by Sebastian Weszler
 2. Common elements in two sorted lists.
 3. Is list a rotation of another list.
 4. Corporate Flight Bookings (Difference Array)
+5. Find best value. Sum of Mutated Array Closest to Target.
 
 ## Strings
 1. Non-repeating character.
