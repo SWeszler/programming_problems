@@ -15,6 +15,9 @@ class BinarySearchTest(TestCase):
     def test_03_binary_search(self):
         self.assertEqual(binary_search(self.bs_arr, 0), 0)
 
+    def test_04_binary_search(self):
+        self.assertEqual(binary_search(self.bs_arr, 102), False)
+
 
 class FindBestValueTest(TestCase):
 

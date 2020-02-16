@@ -3,18 +3,17 @@ def binary_search(arr, target):
     """Iterative Binary Search algorithm, it only works with sorted list.
     Returns index of target value in the list"""
 
-    left = 0
-    right = len(arr)
+    start = 0
+    end = len(arr) - 1
 
-    while left < right:
-        mid = (left + right) // 2
-
+    while start <= end:
+        mid = (start + end) // 2
         if arr[mid] == target:
             return mid
-        elif mid > target:
-            right = mid
-        elif mid < target:
-            left = mid
+        elif target < mid:
+            end = mid - 1
+        else:
+            start = mid + 1
 
     return False
 
