@@ -32,6 +32,7 @@ by Sebastian Weszler
 
 ## Dynamic Programming
 1. Knapsack problem  
+2. Plates (Google KickStart 2020 Round A)  
 
 ## Techniques
 1. Analyse solution on paper.
