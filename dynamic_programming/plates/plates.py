@@ -57,17 +57,17 @@ def plates_bf(N: int, K: int, P: int, stacks: List[List]):
             return [[]]
         res = []
         for y in range(min(plates_to_pick, k_plates)):
-            for x in combinations(K, n_stacks - 1, plates_to_pick - y - 1):
+            for x in combinations(k_plates, n_stacks - 1, plates_to_pick - y):
                 res.append(x + [y])
+
         return res
 
-    for p in combinations(K + 1, N, P):
+    for p in combinations(K + 1, N, P + 1):
         print(p)
-        if sum(p) == P:
-            s = 0
-            for i, np in enumerate(p):
-                s += sum(stacks[i][:np])
-            res = max(res, s)
+        s = 0
+        for i, np in enumerate(p):
+            s += sum(stacks[i][:np])
+        res = max(res, s)
     return res
 
 

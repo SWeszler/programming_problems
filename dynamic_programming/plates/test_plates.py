@@ -18,10 +18,10 @@ class PlatesTest(TestCase):
         stacks = [[10, 10, 100, 30], [80, 50, 10, 50]]
         self.assertEqual(plates_bf(N, K, P, stacks), 250)
 
-    # def test_04_plates_bf(self):
-    #     N, K, P = 3, 2, 3
-    #     stacks = [[80, 80], [15, 50], [20, 10]]
-    #     self.assertEqual(plates_bf(N, K, P, stacks), 180)
+    def test_04_plates_bf(self):
+        N, K, P = 3, 2, 3
+        stacks = [[80, 80], [15, 50], [20, 10]]
+        self.assertEqual(plates_bf(N, K, P, stacks), 180)
 
     def test_05_plates_mem(self):
         N, K, P = 2, 4, 5
