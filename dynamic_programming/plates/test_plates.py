@@ -33,12 +33,17 @@ class PlatesTest(TestCase):
         stacks = [[80, 80], [15, 50], [20, 10]]
         self.assertEqual(plates_mem(N, K, P, stacks), 180)
 
-    # def test_07_plates(self):
-    #     N, K, P = 2, 4, 5
-    #     stacks = [[10, 10, 100, 30], [80, 50, 10, 50]]
-    #     self.assertEqual(plates_dp(N, K, P, stacks), 250)
+    def test_07_plates(self):
+        N, K, P = 2, 4, 5
+        stacks = [[10, 10, 100, 30], [80, 50, 10, 50]]
+        self.assertEqual(plates_dp(N, K, P, stacks), 250)
 
-    # def test_08_plates(self):
-    #     N, K, P = 3, 2, 3
-    #     stacks = [[80, 80], [15, 50], [20, 10]]
-    #     self.assertEqual(plates_dp(N, K, P, stacks), 180)
+    def test_08_plates(self):
+        N, K, P = 3, 2, 3
+        stacks = [[80, 80], [15, 50], [20, 10]]
+        self.assertEqual(plates_dp(N, K, P, stacks), 180)
+
+    def test_09_plates(self):
+        N, K, P = 1, 3, 3
+        stacks = [[20, 5, 10]]
+        self.assertEqual(plates_dp(N, K, P, stacks), 35)

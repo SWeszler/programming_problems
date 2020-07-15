@@ -41,7 +41,10 @@ He can pick the top plate from the third stack (20).
 In total, the sum of beauty values is 180.
 
 ## Solution
-For better understanding of a problem like this we're going to start with brute force solution.
+Required Skills:
+* replacing loops with recursion - how to convert iterative to recursive solution and vice versa  
+
+For better understanding of the problem we're going to start with brute force solution.
 To create all possible combinations of plates that Dr. Patel could pick, we can use "product" function from Python itertools library.
 
 Very important to note is that we don't create combinations from a set of plates, we can only pick a plate from the top of a stack so we must create combinations of numbers of plates to pick from each stack. According to Example #1, we could pick the following numbers of plates from each stack respectively:  
@@ -53,7 +56,7 @@ Very important to note is that we don't create combinations from a set of plates
 How to generate these combinations programmatically? We need nested for-loops for that.
 (FYI: In combinatorics we would rather use term permutations with repetition instead of combinations)
 
-2 stacks of plates with 4 plates in each stack, we include 0 because it might happen when we don't pick any plate from one stack  
+2 stacks of plates with 4 plates in each stack, we include 0 because there might be a case in which we don't pick any plate from one stack  
 {0, 1, 2, 3, 4} x {0, 1, 2, 3, 4}  
 itertools.product (Cartesian product of input iterables) is roughly an equivalent of nested for-loops, to find Python implementation go to https://docs.python.org/3/library/itertools.html#itertools.product
 
@@ -83,9 +86,9 @@ From itertools.product we get all possible permutations with repetition:
 ~~(4, 3)~~  
 ~~(4, 4)~~  
 
-From a 2 sets of 5 items we get 25 permutations, the time complexity for product is O((K+1)^N), in this case we can ignore the constant value, so we get O(K^N). The total time complexity is even higher because we need to calculate sums.
+From a 2 sets of 5 items we get 25 permutations, the time complexity for product is O((K+1)^N). In this case we can ignore the constant value, so we get O(K^N). The total time complexity is even higher because we need to calculate sums.
 This obviously isn't an optimal solution, in the next step we'll use dynamic programming to optimize it.
-There are two distinctly different approaches to Dynamic Programming, one is Memoization and the other is Intermediate State, also called Bottom-Up, we'll go through both of them.  
+There are two distinct approaches to Dynamic Programming, one is Memoization and the other is Intermediate State, also called Bottom-Up approach, we'll go through both of them.  
 To begin with Memoization we need to replace intertool.product with our own recursive implementation. We'll call it combinations because we don't need all permutations with repetition.
 
 ## Data structure

@@ -49,7 +49,7 @@ def plates_bf_my_product(N: int, K: int, P: int, stacks: List[List]):
     return res
 
 
-def plates_bf(N: int, K: int, P: int, stacks: List[List]):
+def plates_bf_0(N: int, K: int, P: int, stacks: List[List]):
     res = 0
 
     def combinations(k_plates, n_stacks, plates_to_pick):
@@ -70,34 +70,59 @@ def plates_bf(N: int, K: int, P: int, stacks: List[List]):
         res = max(res, s)
     return res
 
+def plates_bf(N: int, K: int, P: int, stacks: List[List]):
 
-def plates_mem(N: int, K: int, P: int, stacks: List[List]):
-    """Dynamic Programming Memoization technique"""
-    res = 0
-    dp = defaultdict(lambda: defaultdict(int))
-
-    def find_max(curr_stk, K, plates_left):
-        """Using defaultdict as cache"""
-        if dp[curr_stk][plates_left]:
-            return dp[curr_stk][plates_left]
-
-        if plates_left <= 0 or curr_stk < 0:
+    def findMax(k_plates, n_stacks, plates_to_pick):
+        if n_stacks < 0:
             return 0
 
-        max_b = find_max(curr_stk - 1, K, plates_left)
-        curr_b = 0
-        for i in range(min(plates_left, K)):
-            curr_b += stacks[curr_stk][i]
-            max_b = max(max_b, curr_b + find_max(curr_stk - 1, K, plates_left - i - 1))
+        max_val = findMax(k_plates, n_stacks - 1, plates_to_pick)
 
-        dp[curr_stk][plates_left] = max_b
-        return max_b
-        
-    res = find_max(N - 1, K, P)
-    return res
+        for y in range(min(plates_to_pick, k_plates)):
+            s = sum(stacks[n_stacks][:y])
+            max_val = max(max_val, s + findMax(k_plates, n_stacks - 1, plates_to_pick - y))
+
+        return max_val
+
+    return findMax(K + 1, N - 1, P + 1)
+
+
+def plates_mem(N: int, K: int, P: int, stacks: List[List]):
+    """Dynamic Programming - Memoization"""
+    dp = defaultdict(lambda: defaultdict(int))
+
+    def findMax(k_plates, n_stacks, plates_to_pick):
+        if dp[n_stacks][plates_to_pick]:
+            return dp[n_stacks][plates_to_pick]
+
+        if n_stacks < 0 or plates_to_pick <= 0:
+            return 0
+
+        max_val = findMax(k_plates, n_stacks - 1, plates_to_pick)
+
+        s = 0
+        for y in range(min(plates_to_pick, k_plates)):
+            s += stacks[n_stacks][y]
+            max_val = max(max_val, s + findMax(k_plates, n_stacks - 1, plates_to_pick - y - 1))
+
+        dp[n_stacks][plates_to_pick] = max_val
+        return max_val
+
+    return findMax(K, N - 1, P)
 
 
 def plates_dp(N: int, K: int, P: int, stacks: List[List]):
-    """Dynamic Programming - intermediate state"""
-    res = 0
-    return res
+    """Dynamic Programming - Intermediate State"""
+    sums = [[0 for j in range(K + 1)] for i in range(N + 1)]
+    dp = [[0 for j in range(P + 1)] for i in range(N + 1)]
+    for i in range(1, N + 1):
+        for j in range(1, K + 1):
+            sums[i][j] = stacks[i - 1][j - 1]
+            sums[i][j] += sums[i][j - 1]
+
+    for i in range(1, N + 1):
+        for j in range(1, P + 1):
+            for x in range(min(j + 1, K + 1)):
+                dp[i][j] = max(dp[i][j], sums[i][x] + dp[i - 1][j - x])
+
+    return dp[-1][-1]
