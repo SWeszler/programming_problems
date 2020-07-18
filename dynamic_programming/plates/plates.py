@@ -52,18 +52,17 @@ def plates_bf_my_product(N: int, K: int, P: int, stacks: List[List]):
 def plates_bf_0(N: int, K: int, P: int, stacks: List[List]):
     res = 0
 
-    def combinations(k_plates, n_stacks, plates_to_pick):
+    def combinations(n_stacks, plates_to_pick):
         if n_stacks == 0:
             return [[]]
         res = []
-        for y in range(min(plates_to_pick, k_plates)):
-            for x in combinations(k_plates, n_stacks - 1, plates_to_pick - y):
+        for y in range(min(plates_to_pick, K)):
+            for x in combinations(n_stacks - 1, plates_to_pick - y):
                 res.append(x + [y])
 
         return res
 
-    for p in combinations(K + 1, N, P + 1):
-        print(p)
+    for p in combinations(N, P + 1):
         s = 0
         for i, np in enumerate(p):
             s += sum(stacks[i][:np])
@@ -72,43 +71,44 @@ def plates_bf_0(N: int, K: int, P: int, stacks: List[List]):
 
 def plates_bf(N: int, K: int, P: int, stacks: List[List]):
 
-    def findMax(k_plates, n_stacks, plates_to_pick):
-        if n_stacks < 0:
+    def findMax(n_stacks, plates_to_pick):
+        if n_stacks < 0 or plates_to_pick <= 0:
             return 0
 
-        max_val = findMax(k_plates, n_stacks - 1, plates_to_pick)
+        max_val = findMax(n_stacks - 1, plates_to_pick)
 
-        for y in range(min(plates_to_pick, k_plates)):
-            s = sum(stacks[n_stacks][:y])
-            max_val = max(max_val, s + findMax(k_plates, n_stacks - 1, plates_to_pick - y))
+        s = 0
+        for y in range(min(plates_to_pick, K)):
+            s += stacks[n_stacks][y]
+            max_val = max(max_val, s + findMax(n_stacks - 1, plates_to_pick - y - 1))
 
         return max_val
 
-    return findMax(K + 1, N - 1, P + 1)
+    return findMax(N - 1, P)
 
 
 def plates_mem(N: int, K: int, P: int, stacks: List[List]):
     """Dynamic Programming - Memoization"""
     dp = defaultdict(lambda: defaultdict(int))
 
-    def findMax(k_plates, n_stacks, plates_to_pick):
+    def findMax(n_stacks, plates_to_pick):
         if dp[n_stacks][plates_to_pick]:
             return dp[n_stacks][plates_to_pick]
 
         if n_stacks < 0 or plates_to_pick <= 0:
             return 0
 
-        max_val = findMax(k_plates, n_stacks - 1, plates_to_pick)
+        max_val = findMax(n_stacks - 1, plates_to_pick)
 
         s = 0
-        for y in range(min(plates_to_pick, k_plates)):
+        for y in range(min(plates_to_pick, K)):
             s += stacks[n_stacks][y]
-            max_val = max(max_val, s + findMax(k_plates, n_stacks - 1, plates_to_pick - y - 1))
+            max_val = max(max_val, s + findMax(n_stacks - 1, plates_to_pick - y - 1))
 
         dp[n_stacks][plates_to_pick] = max_val
         return max_val
 
-    return findMax(K, N - 1, P)
+    return findMax(N - 1, P)
 
 
 def plates_dp(N: int, K: int, P: int, stacks: List[List]):

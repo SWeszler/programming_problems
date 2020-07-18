@@ -8,9 +8,9 @@ W = 50
 Answer: 220
 
 ## Solution
-How to build two dimensional DP table:
-1) It's easier to determine what's the value that needs to be stored, in this case we need to compute and store the sum of item values. This means values can't be one of two dimensions.
-2) The remaining input is weights and knapsack capacity - W. Both are represented by integer numbers, and can be easily plotted on two dimensional array.
+How to build two-dimensional DP table:
+1) It's easier to determine the value we need to store than the dimensions of a table. In this case we need to compute and store the max sum of items from the value array. This means the max value can't be one of the two dimensions.
+2) The remaining inputs we've got are weights and knapsack capacity - W. Both are represented by integer numbers, so we can easily distribute them on a DP table.
 
 
 ## Data structure
