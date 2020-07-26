@@ -34,6 +34,9 @@ by Sebastian Weszler
 1. Knapsack problem  
 2. Plates (Google KickStart 2020 Round A)  
 
+## Greedy
+1. Alien Piano (Google KickStart 2020 Round D)
+
 ## Techniques
 1. Analyse solution on paper.
 2. Big picture first, then details. If this is large problem, break it down into smaller functions (representing steps or different cases), keep your algorithm loosely coupled with the data structure. Use known data structure.
