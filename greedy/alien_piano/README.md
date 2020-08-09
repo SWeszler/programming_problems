@@ -45,25 +45,32 @@ So none of the rules are broken. Note: A B C D C is not the only way of conversi
 In example #2, the only conversion sequence that provides the minimal result of 1 rule broken is: A B C D A B C D. Notably, the rule break comes from the fact that our 4th note with pitch 4 is lower than our 5th note with pitch 5, but A is a lower key than D.
 
 ## Solution
-
-As stated in the explanation for example #1, there can be many eligible conversions, means that we might need to test all possible conversions to find the 
+Required Skills:
+* replacing loops with recursion - how to convert iterative to recursive solution and vice versa  
+* traversing 2 dimensional "dynamic programming" table  
+* creating test cases
 
 ### Brute Force
+As stated in the example #1, there can be many eligible conversions, means that we might need to test all possible conversions to find the best one (the least violations).
 
-### Memoization
+### Dynamic Programming - Memoization
+Once we have recursive brute force solution we can implement the cache, this will increase the efficiency of our algorithm because we don't compute again occurrences with the same input values.
 
+### Dynamic Programming - Intermediate State
+In this solution we store precomputed values in the DP table, based on previous result we compute another. In the end we get our result. 
 
 ### Greedy Approach
-
-
-### Dynamic Programming
-
-
+What we should focus on here is not the combinations we have to generate but only the situation in which we break the rules. If we remove all duplicated adjacent values it's easier to count converted notes, for up and down conversion separately. We can iterate over all notes and convert them. If we reach the point when there are more than 3 (it's not 4 because we revisit previous note) conversions up or down in a row, we increase the number of violations and reset counters.  
+Resetting counters is the key, for every increment of one counter we reset the other. We could have thought, instead of resetting we should be decreasing the counter because the rules say so. This isn't true tho, in this solution we find the pattern for when the violations occur. To figure out the pattern we need to take a couple of examples and do conversion manually.
 
 ## Data structure
-
+DP - Dictionary (hashmap)  
+Greedy - Python list  
 
 ## Time complexity
-
+BF - O(4^K)  
+DP - O(K) the number of Alien Piano notes is always 4, which makes it constant that we can ignore  
+Greedy - O(K)  
 
 ## Space complexity
+O(K)

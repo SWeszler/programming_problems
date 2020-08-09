@@ -51,6 +51,7 @@ Duplicated work - The same as for unnecessary work, try to eliminate operations 
 7. While working with more complicated recursive functions use The Call Stack to visualize execution for each function call.
 8. It might not be applicable to many problems, but whenever the optimization of the algorithm is needed it's worth to consider next known better time complexity [Big O Cheat Sheet](https://www.bigocheatsheet.com/). For instance if O(n) isn't enough try O(logN), which can be achieved by dividing your set of data by 2 and run your function recursively until finding a result. (Divide and conquer)
 9. From a brute force solution find a pattern or sequence, if this is arithmetic or geometric sequence you can apply mathematical equation to find sum of a sequence or nth element.
+10. To find patterns, consider all test cases and analyse them one by one, use bigger sets of input data.
 
 
 ## Testing

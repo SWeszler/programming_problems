@@ -44,6 +44,7 @@ In total, the sum of beauty values is 180.
 Required Skills:
 * replacing loops with recursion - how to convert iterative to recursive solution and vice versa  
 * combinatorics - permutations with repetition  
+* traversing 2 dimensional "dynamic programming" table
 
 ### Brute Force
 For better understanding of the problem we're going to start with brute force solution.
@@ -107,14 +108,14 @@ for y in range(min(plates_to_pick, K)):
 This makes a huge difference when we have large number of plates in the stack. Running sum() for number of items in the stack takes O(n), this is very inefficient. We can compute subsequent sums by incrementing previously computed sum, which will only take one operation - O(1).  
 
 
-### Memoization
+### Dynamic Programming - Memoization
 Now, when we have recursive function which takes only two arguments that change during the computation, we can implement Memoization/cache. Let's take an advantage of Python defaultdict, it's a very convenient way of construction an empty dictionary to store precomputed max values for each stack and number of plates to pick.
 ```
 dp = defaultdict(lambda: defaultdict(int))
 ```
 The idea of caching is very simple, we store all computed values in our dp dictionary and retrieve it for existing keys n_stack and plates_to_pick. This is to eliminate all recursive calls that have already been computed.
 
-### Intermediate State
+### Dynamic Programming - Intermediate State
 As an alternative to Memoization we'll now use Intermediate State dp table. The concept is pretty much the same, we also create a dictionary dp with two dimensions, N - number of stacks and P - plates to pick, but instead of recursion we write nested for-loops. This requires to precompute sum of the first x plates for each stack. Once we're done with it we can start populating max values found so far for each of the dp table cell, starting from top left corner. The essential part of the entire algorithm is this formula:
 ```
 dp[i][j] = max(dp[i][j], sums[i][x] + dp[i - 1][j - x])
