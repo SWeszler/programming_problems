@@ -36,6 +36,7 @@ by Sebastian Weszler
 
 ## Greedy
 1. Alien Piano (Google KickStart 2020 Round D)
+2. Two City Scheduling - Leetcode 1029
 
 ## Techniques
 1. Analyse solution on paper.
