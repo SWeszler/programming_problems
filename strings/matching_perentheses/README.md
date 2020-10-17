@@ -20,7 +20,14 @@ If our stack isn't empty after processing given string it means that some parent
 Stack (Python list)
 
 ## Time complexity
-O(N + N*log(N/2)/2)
+With nested For loop:
+O(N^2/4) -> O(N^2)
+
+With dictionary (hashmap):
+O(N + N/2) -> O(N)
+
+With sorting:
+O(N + N*log(N/2)/2) -> O(N)
 
 ## Space complexity
 O(N)
