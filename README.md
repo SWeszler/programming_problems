@@ -5,7 +5,7 @@ by Sebastian Weszler
 1. Most frequently occurring item in the list.
 2. Common elements in two sorted lists.
 3. Is list a rotation of another list.
-4. Corporate Flight Bookings (Difference Array)
+4. Corporate Flight Bookings - Leetcode 1109 [difference_array]
 5. Find best value. Sum of Mutated Array Closest to Target. [binary_search]
 6. K Closest Points to origin [quicksort]
 7. Rotate 2D list by 90 degrees
@@ -21,7 +21,8 @@ by Sebastian Weszler
 ## Graphs
 1. Assign numbers in Minesweeper
 2. Find where to expand in Minesweeper
-3. Course Schedule - Leetcode 207 [dfs, bfs, kahns_top_sort]
+3. Course Schedule - Leetcode 207 [dfs, bfs, kahns_top_sort] - WIP
+4. Stable Wall (Google Kickstart 2020 Round C) - WIP
 
 ## Linked Lists
 1. N-th element of a linked list
