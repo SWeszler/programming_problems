@@ -6,8 +6,8 @@ by Sebastian Weszler
 2. Common elements in two sorted lists.
 3. Is list a rotation of another list.
 4. Corporate Flight Bookings (Difference Array)
-5. Find best value. Sum of Mutated Array Closest to Target.
-6. K Closest Points to origin
+5. Find best value. Sum of Mutated Array Closest to Target. [binary_search]
+6. K Closest Points to origin [quicksort]
 7. Rotate 2D list by 90 degrees
 
 ## Strings
@@ -21,10 +21,11 @@ by Sebastian Weszler
 ## Graphs
 1. Assign numbers in Minesweeper
 2. Find where to expand in Minesweeper
-3. Course Schedule - Leetcode 207
+3. Course Schedule - Leetcode 207 [dfs, bfs, kahns_top_sort]
 
 ## Linked Lists
 1. N-th element of a linked list
+2. Delayed Projects - WIP
 
 ## Trees
 1. Is it a binary search tree
