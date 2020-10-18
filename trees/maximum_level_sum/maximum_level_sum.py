@@ -76,19 +76,19 @@ def maximum_level_sum_queue(tree):
 
 def maximum_level_sum_2(root):
 
-    def preOrder(root, graph, lvl):
+    def pre_order(root, graph, lvl):
         if not root:
             return
         if lvl not in graph:
             graph[lvl] = 0
         
         graph[lvl] += root.val
-        preOrder(root.left, graph, lvl+1)
-        preOrder(root.right, graph, lvl+1)
+        pre_order(root.left, graph, lvl+1)
+        pre_order(root.right, graph, lvl+1)
         
     graph = {}
     
-    preOrder(root, graph, 1)
+    pre_order(root, graph, 1)
     print(graph)
     ans_pair = (1,float("-inf"))
     for k,v in graph.items():

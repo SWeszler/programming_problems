@@ -7,6 +7,8 @@ by Sebastian Weszler
 3. Is list a rotation of another list.
 4. Corporate Flight Bookings (Difference Array)
 5. Find best value. Sum of Mutated Array Closest to Target.
+6. K Closest Points to origin
+7. Rotate 2D list by 90 degrees
 
 ## Strings
 1. Non-repeating character.
@@ -16,11 +18,10 @@ by Sebastian Weszler
 5. Count and Say
 6. Encode Number - Leetcode 1256
 
-## Graphs (two-dimensional lists)
+## Graphs
 1. Assign numbers in Minesweeper
 2. Find where to expand in Minesweeper
-3. Rotate 2D list by 90 degrees
-4. K Closest Points to origin
+3. Course Schedule - Leetcode 207
 
 ## Linked Lists
 1. N-th element of a linked list
