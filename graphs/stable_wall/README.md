@@ -69,7 +69,9 @@ In sample case #4, the only possible answer is EDCBA.
 
 
 ## Solution
+Given the picture of the wall, if two polyominos are positioned one above another, and they touch each other, then to make a stable wall, the bottom one must be placed before the top one. This gives us a set of orderings of pairs of letters which must be followed while placing the polyominos.
 
+We can make a graph with the set of orderings just mentioned. Each polyomino/letter can be considered as a vertex, and each of the orderings can be considered as a directed edge of the graph. If the resulting graph contains any cycle, it is not possible to have a stable wall. Otherwise, we can use topological sort to find a suitable order that fulfills all the orderings. We can find all the orderings in O(R × C) time. We can find a topological sorting of the vertices of a directed acyclic graph by using depth first search. Depth first search gives us a runtime complexity of O(number of edges + number of vertices). The number of edges in the graph is at most (R-1) × C, as each cell of the grid adds at most one edge, to the cell right above it. So the total runtime complexity of this approach for each test case is O(R × C) + O(N + R × C) = O(R × C), since N can be at most R × C. This is sufficient for test set 2.
 
 ## Data structure
 
