@@ -6,7 +6,7 @@ def plates_bf_itertools(N: int, K: int, P: int, stacks: List[List]):
     """The most naive approach to solve the Plates problem from Google KickStart 2020 Round A"""
     res = 0
 
-    for p in product(range(K + 1), repeat = N):
+    for p in product(range(K + 1), repeat=N):
         if sum(p) == P:
             s = 0
             for i, np in enumerate(p):
