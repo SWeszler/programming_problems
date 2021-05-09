@@ -34,15 +34,24 @@ In total you spent $17 and covered all the days of your travel.
 
 Note:
 
-1 <= days.length <= 365
-1 <= days[i] <= 365
-days is in strictly increasing order.
-costs.length == 3
-1 <= costs[i] <= 1000
-
+1 <= days.length <= 365  
+1 <= days[i] <= 365  
+days is in strictly increasing order.  
+costs.length == 3   
+1 <= costs[i] <= 1000  
+ 
 ## Solution
-**Problem Type: Optimization Problem (tractable)**
-First approach is brute-force. We try to compute all possible combinations of passes purchased to travel in all days. This can be visualized in a tree, each node is a day in which we must buy a new pass, (cost) - represents cost of a particular pass.
+**Problem Type: Optimization Problem (tractable)**  
+Required skills:
+- find max or min from array recursively
+- find sum of array recursively
+- cache function result (memoization)
+- dynamic programming tabulation
+- visualize the problem as a table
+- size the table based on the inputs (tractable solution)
+
+## Dynamic Programming - Memoization
+First approach is brute-force. We try to compute all possible combinations of passes purchased to travel in all days. This can be visualized in a tree, each node represents a day in which we must buy a new pass, (cost) - represents cost of a particular pass.
 
 ```
               start  
