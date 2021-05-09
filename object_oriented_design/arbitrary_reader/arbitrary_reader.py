@@ -1,9 +1,13 @@
-# Implement a buffered file reader
+"""
+Implement a buffered file reader
+"""
 
-# This class is given.
 class BlockReader:
+    """
+    Block reader class. This class is given.
+    """
 
-    def Read4096(self, buf):
+    def read_4096(self, buf):
         """
         Reads the next 4096 bytes from a file, copies it into the given buffer.
 
@@ -16,6 +20,7 @@ class BlockReader:
 
 class ArbitraryReader:
     def __init__(self):
+        """Constructor"""
         self.reader = BlockReader()
 
     def Read(self, buf, bytes_to_read):
@@ -26,7 +31,7 @@ class ArbitraryReader:
         bytes_read = 0
 
         while bytes_to_read > 0:
-            bytes_read = self.reader.Read4096(buf)
+            bytes_read = self.reader.read_4096(buf)
             buf += bytes_read
 
         return bytes_read
@@ -35,5 +40,5 @@ class ArbitraryReader:
 ar = ArbitraryReader()
 width = 4
 height = 4
-buf = 0
-bytes_read = ar.Read(width * height * 4)
+buffer = 0
+bytes_read_global = ar.Read(width * height * 4)
