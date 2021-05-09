@@ -70,9 +70,11 @@ To optimize it we can use memoization (caching). Cost for some od the days has a
 **Python List**
 
 ## Time complexity
-
+O(3^N) - brute force
+O(N*M) - dynamic programming memoization (recursive)
+O(N^2) - dynamic programming tabulation (bottom up, intermediate state, iterative)
 
 ## Space complexity
 O(1) - brute force
 O(3^N) - dynamic programming memoization (recursive)
-O(N^2) - dynamic programming tabulation (bottom up, intermediate state, iterative)
+O(N*M) - dynamic programming tabulation (bottom up, intermediate state, iterative)

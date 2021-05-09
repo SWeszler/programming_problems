@@ -19,11 +19,11 @@ def alien_piano(K, notes):
 
 def alien_piano_bf(K, notes):
 
-    def findMin(start, i):
+    def find_min(start, i):
         if i < 0:
             return K
 
-        min_val = findMin(start, i - 1)
+        min_val = float('inf')
 
         down, up = 1, 5
         if 0 < i < K:
@@ -40,25 +40,25 @@ def alien_piano_bf(K, notes):
             down, up = 1, 5
 
         for c in range(down, up):
-            min_val = min(min_val, findMin(c, i - 1) - breaks)
+            min_val = min(min_val, find_min(c, i - 1) - breaks)
 
         return min_val
     
     mn = K
     for c in range(1, 5):
-        mn = min(mn, findMin(c, K - 1))
+        mn = min(mn, find_min(c, K - 1))
     return mn
 
 
 def alien_piano_mem(K, notes):
     dp = {}
-    def findMin(start, i):
+    def find_min(start, i):
         if (start, i) in dp:
             return dp[start, i]
         if i < 0:
             return K
 
-        min_val = findMin(start, i - 1)
+        min_val = float('inf')
 
         down, up = 1, 5
         if 0 < i < K:
@@ -75,14 +75,14 @@ def alien_piano_mem(K, notes):
             down, up = 1, 5
 
         for c in range(down, up):
-            min_val = min(min_val, findMin(c, i - 1) - breaks)
+            min_val = min(min_val, find_min(c, i - 1) - breaks)
 
         dp[start, i] = min_val
         return min_val
     
     mn = K
     for c in range(1, 5):
-        mn = min(mn, findMin(c, K - 1))
+        mn = min(mn, find_min(c, K - 1))
     return mn
 
 
