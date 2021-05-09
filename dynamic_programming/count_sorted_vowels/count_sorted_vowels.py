@@ -9,10 +9,10 @@ def count_sorted_vowels_bf(N):
             for v in vowels:
                 new_perms.append(s + v)
         perms = new_perms
-    
+
     for s in perms:
         if s == "".join(sorted(s)):
-            res += 1   
+            res += 1
 
     return res
 
@@ -25,4 +25,3 @@ def count_sorted_vowels_dp(N):
             dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
 
     return dp[-1][-1]
-        

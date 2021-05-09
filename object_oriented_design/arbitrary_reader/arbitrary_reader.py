@@ -5,10 +5,10 @@ class BlockReader:
 
     def Read4096(self, buf):
         """
-        Reads the next 4096 bytes from a file, copies it into the given buffer. 
+        Reads the next 4096 bytes from a file, copies it into the given buffer.
 
         Returns the actual number of bytes read.
-        This will equal 4096 except when it has reached the end-of-file. 
+        This will equal 4096 except when it has reached the end-of-file.
         """
         bytes_read = 0
         return bytes_read
@@ -16,7 +16,7 @@ class BlockReader:
 
 class ArbitraryReader:
     def __init__(self):
-       self.reader = BlockReader()
+        self.reader = BlockReader()
 
     def Read(self, buf, bytes_to_read):
         """
@@ -37,5 +37,3 @@ width = 4
 height = 4
 buf = 0
 bytes_read = ar.Read(width * height * 4)
-          
-	

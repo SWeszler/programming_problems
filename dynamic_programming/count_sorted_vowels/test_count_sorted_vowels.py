@@ -1,6 +1,7 @@
 from unittest import TestCase
 from count_sorted_vowels import count_sorted_vowels_bf, count_sorted_vowels_dp
 
+
 class CountSortedVowelsTest(TestCase):
 
     def test_01_count_sorted_vowels_bf(self):
