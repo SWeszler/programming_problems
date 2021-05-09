@@ -71,44 +71,44 @@ def plates_bf_0(N: int, K: int, P: int, stacks: List[List]):
 
 def plates_bf(N: int, K: int, P: int, stacks: List[List]):
 
-    def findMax(n_stacks, plates_to_pick):
+    def find_max(n_stacks, plates_to_pick):
         if n_stacks < 0 or plates_to_pick <= 0:
             return 0
 
-        max_val = findMax(n_stacks - 1, plates_to_pick)
+        max_val = find_max(n_stacks - 1, plates_to_pick)
 
         s = 0
         for y in range(min(plates_to_pick, K)):
             s += stacks[n_stacks][y]
-            max_val = max(max_val, s + findMax(n_stacks - 1, plates_to_pick - y - 1))
+            max_val = max(max_val, s + find_max(n_stacks - 1, plates_to_pick - y - 1))
 
         return max_val
 
-    return findMax(N - 1, P)
+    return find_max(N - 1, P)
 
 
 def plates_mem(N: int, K: int, P: int, stacks: List[List]):
     """Dynamic Programming - Memoization"""
     dp = defaultdict(lambda: defaultdict(int))
 
-    def findMax(n_stacks, plates_to_pick):
+    def find_max(n_stacks, plates_to_pick):
         if dp[n_stacks][plates_to_pick]:
             return dp[n_stacks][plates_to_pick]
 
         if n_stacks < 0 or plates_to_pick <= 0:
             return 0
 
-        max_val = findMax(n_stacks - 1, plates_to_pick)
+        max_val = find_max(n_stacks - 1, plates_to_pick)
 
         s = 0
         for y in range(min(plates_to_pick, K)):
             s += stacks[n_stacks][y]
-            max_val = max(max_val, s + findMax(n_stacks - 1, plates_to_pick - y - 1))
+            max_val = max(max_val, s + find_max(n_stacks - 1, plates_to_pick - y - 1))
 
         dp[n_stacks][plates_to_pick] = max_val
         return max_val
 
-    return findMax(N - 1, P)
+    return find_max(N - 1, P)
 
 
 def plates_dp(N: int, K: int, P: int, stacks: List[List]):
