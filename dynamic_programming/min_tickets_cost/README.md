@@ -65,16 +65,23 @@ First approach is brute-force. We try to compute all possible combinations of pa
 In order to find the smallest total cost for each branch we must traverse this tree. Every time we move to another day we have 3 options to choose. This makes the time complexity exponential, in a worst case it's O(N^3).
 To optimize it we can use memoization (caching). Cost for some od the days has already been computed, we don't have to do that again, the result can be stored and reused.
 
+## Dynamic Programming - Tabulation
+"Size the table based on the inputs" - it's the hardest part of this problem. It doesn't seem natural that our table must contain all days from day 0 to the last day. From provided list of days we have to create a table D:{0,1,2,3,4,5, ... , days[-1]}. Next we must differentiate days when we travel, value 0 stands for travel and -1 for stay.
+Having a table like that we can start populating the cost for each day. Every time we compare cost for 1-day, 7-day, 30-day passes. To prevent from calling invalid list index we use:
+```
+days[max(0, i - 7)]
+days[max(0, i - 30)]
+```
 
 ## Data structure
 **Python List**
 
 ## Time complexity
-O(3^N) - brute force
-O(N*M) - dynamic programming memoization (recursive)
-O(N^2) - dynamic programming tabulation (bottom up, intermediate state, iterative)
+O(3^N) - brute force  
+O(N) - dynamic programming memoization (recursive)  
+O(D(N)) - dynamic programming tabulation (bottom up, intermediate state, iterative), where D(N) is the number of all days from day 0 to the last day
 
 ## Space complexity
-O(1) - brute force
-O(3^N) - dynamic programming memoization (recursive)
-O(N*M) - dynamic programming tabulation (bottom up, intermediate state, iterative)
+O(N) - brute force  
+O(N) - dynamic programming memoization (recursive)  
+O(D(N)) - dynamic programming tabulation (bottom up, intermediate state, iterative), where D(N) is the number of all days from day 0 to the last day
