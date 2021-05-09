@@ -40,9 +40,3 @@ def min_tickets_cost_mem(days, costs):
             
         return min_cost(days[0], 0)
 
-
-days = [1,4,6,7,8,20]
-costs = [2,7,15]
-min_tickets_cost = min_tickets_cost_mem
-
-print(min_tickets_cost(days, costs))
