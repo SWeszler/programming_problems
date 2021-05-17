@@ -1,6 +1,9 @@
 def kahns_top_sort(graph):
-    """Kahn's topological sort"""
-    in_degree = [0] * len(graph)
+    """Kahn's topological sort
+    queue - nodes that have no incoming edges,
+    to calculate that we take items from in_degree with value 0.
+    """
+    in_degree = [0] * len(graph) #TODO: replace in_decgree list with defaultdict
     queue = []
     res = []
 

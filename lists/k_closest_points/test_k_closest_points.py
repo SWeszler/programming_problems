@@ -1,5 +1,5 @@
 from unittest import TestCase
-from k_closest_points import k_closest_points, quicksort
+from k_closest_points import k_closest_points
 
 class KClosestPointsTest(TestCase):
 
