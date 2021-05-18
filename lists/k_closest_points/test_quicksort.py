@@ -1,5 +1,5 @@
 from unittest import TestCase
-from quicksort import quicksort_simulation, quicksort
+from quicksort import quicksort_simulation, quicksort, quicksort_recursive
 
 
 class QuickSortSimulationTest(TestCase):
@@ -30,6 +30,29 @@ class QuickSortSimulationTest(TestCase):
         sorted_list = quicksort_simulation(list1)
 
         self.assertEqual(sorted_list[-1], 11)
+
+
+class QuickSortTest(TestCase):
+
+    def test_01_quicksort(self):
+        list1 = [2, 3, 5, 1, 4, 6, 7]
+        quicksort(list1)
+        self.assertEqual(list1, [1, 2, 3, 4, 5, 6, 7])
+
+    def test_02_quicksort(self):
+        list1 = [2, 1, 5, 1, 4, 1, 7]
+        quicksort(list1)
+        self.assertEqual(list1, [1, 1, 1, 2, 4, 5, 7])
+
+    def test_03_quicksort_recursive(self):
+        list1 = [2, 3, 5, 1, 4, 6, 7]
+        quicksort_recursive(list1)
+        self.assertEqual(list1, [1, 2, 3, 4, 5, 6, 7])
+
+    def test_04_quicksort_recursive(self):
+        list1 = [2, 1, 5, 1, 4, 1, 7]
+        quicksort_recursive(list1)
+        self.assertEqual(list1, [1, 1, 1, 2, 4, 5, 7])
 
 
 class QuickSortSimulationForComparisonTest(TestCase):

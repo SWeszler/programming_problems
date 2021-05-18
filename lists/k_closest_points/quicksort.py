@@ -47,7 +47,6 @@ def quicksort_recursive(A, l=0, r=None):
     quicksort_recursive(A, i, r)
 
 
-
 def quicksort(A):
 
     def partition(arr, l, r):
@@ -76,5 +75,5 @@ def quicksort(A):
         i, j = partition(A, left, right)
         if j > left:
             stack.append((left, j))
-        if i > right:
-            stack.append((right, i))
+        if i < right:
+            stack.append((i, right))
